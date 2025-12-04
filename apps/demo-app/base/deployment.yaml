@@ -16,6 +16,12 @@ spec:
     spec:
       containers:
         - name: demo
-          image: REPLACE_IMAGE
+          image: <REPLACE_WITH_IMAGE>   # patched by overlay/CI
           ports:
             - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10

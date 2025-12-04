@@ -1,0 +1,20 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-svc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-svc
+  template:
+    metadata:
+      labels:
+        app: demo-svc
+    spec:
+      containers:
+        - name: app
+          image: demo-svc:latest
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,7 @@
+resources:
+  - deployment.yaml
+  - service.yaml
+
+images:
+  - name: REPLACE_IMAGE
+    newName: REPLACE_IMAGE
